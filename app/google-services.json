@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "482253718354",
+    "project_id": "blessinglaptop-pkk",
+    "storage_bucket": "blessinglaptop-pkk.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482253718354:android:649f6d6a2e7c22362f708b",
+        "android_client_info": {
+          "package_name": "com.example.loginmenu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAC2yJI8POpDZxEsw9XkcVodFgxdHhgwSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

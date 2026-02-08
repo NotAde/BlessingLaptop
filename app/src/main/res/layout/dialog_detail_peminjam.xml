@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/radius_popup"
+    android:backgroundTint="#FFFFFF">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detail Peminjam"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:background="#F2F2F2"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:text="No"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"/>
+                <TextView
+                    android:layout_width="100dp"
+                    android:text="Nama"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"/>
+                <TextView
+                    android:layout_width="100dp"
+                    android:text="Nis"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"/>
+                <TextView
+                    android:layout_width="100dp"
+                    android:text="Kelas"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"/>
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:text="Aksi"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"/>
+
+            </TableRow>
+
+            <TableRow
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:text="1"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/tv_dialog_peminjam_nama"
+                    android:text="-"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/tv_dialog_peminjam_nis"
+                    android:text="-"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/tv_dialog_peminjam_kelas"
+                    android:text="-"
+                    android:gravity="center"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_dialog_kembalikan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Sudah Dikembalikan"
+                        android:backgroundTint="#FFC107"
+                        android:textColor="@android:color/white"
+                        android:layout_marginEnd="8dp"/>
+
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/btn_dialog_close"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="16dp"
+        android:text="Close" />
+</LinearLayout>
