@@ -1,5 +1,6 @@
 package com.example.loginmenu
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -19,6 +20,7 @@ class ProfileActivity : AppCompatActivity() {
     private val laptopCollection = db.collection("laptops")
     private val borrowedLaptops = mutableListOf<Laptop>()
 
+    @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -43,7 +45,7 @@ class ProfileActivity : AppCompatActivity() {
         rvPinjam.layoutManager = LinearLayoutManager(this)
         adapter = LaptopAdapter(borrowedLaptops)
         rvPinjam.adapter = adapter
-
+        fetchUserData()
         fetchBorrowedLaptops()
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
@@ -70,6 +72,7 @@ class ProfileActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun fetchBorrowedLaptops() {
         // This is a simplified query. In a real app, you'd filter by the current user.
         laptopCollection.whereEqualTo("borrowed", true).get()
@@ -82,6 +85,28 @@ class ProfileActivity : AppCompatActivity() {
             }
             .addOnFailureListener { exception ->
                 Log.w("ProfileActivity", "Error getting documents: ", exception)
+            }
+    }
+    private fun fetchUserData() {
+
+        val uid = FirebaseAuth.getInstance().currentUser?.uid ?: return
+
+        FirebaseFirestore.getInstance()
+            .collection("users")
+            .document(uid)
+            .get()
+            .addOnSuccessListener { document ->
+
+                if (document.exists()) {
+
+                    val username = document.getString("username")
+                    val nis = document.getString("nis")
+                    val kelas = document.getString("kelas")
+
+                    findViewById<TextView>(R.id.tvusernameData).text = username
+                    findViewById<TextView>(R.id.tvnis).text = nis
+                    findViewById<TextView>(R.id.tvkelas).text = kelas
+                }
             }
     }
 }
