@@ -34,6 +34,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    compileSdkMinor = 1
 }
 
 dependencies {
