@@ -87,7 +87,7 @@ class ProfileActivity : AppCompatActivity() {
                 Log.w("ProfileActivity", "Error getting documents: ", exception)
             }
     }
-    private fun fetchUserData() {
+    private fun fetchUserData() {///Nama
 
         val uid = FirebaseAuth.getInstance().currentUser?.uid ?: return
 
